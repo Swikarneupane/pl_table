@@ -4,33 +4,21 @@ import SerieA from "./leagues/SerieA"
 import Bundesliga from "./leagues/Bundesliga"
 import Laliga from "./leagues/Laliga"
 import Ligue1 from "./leagues/Ligue1"
+import { Route, Routes } from "react-router-dom"
+import Home from "./Home"
 
 function App() {
-  function toPl() {
-    <PL />
-  }
-  function toSerieA() {
-    <SerieA />
-  }
-  function toBundesliga() {
-    <Bundesliga />
-  }
-  function toLaliga() {
-    <Laliga />
-  }
-  function toLigue1() {
-    <Ligue1 />
-  }
   return (
     <div className="App">
       <h3>Choose a league to view:</h3>
-      <div className="button-wrapper">
-        <button onClick={toPl}>Premier League</button>
-        <button onClick={toSerieA}>Serie A</button>
-        <button onClick={toBundesliga}>Bundesliga</button>
-        <button onClick={toLaliga}>La Liga</button>
-        <button onClick={toLigue1}>Ligue 1</button>
-      </div>
+      <Home />
+      <Routes>
+        <Route path="/pl" element={<PL />} />
+        <Route path="/bundesliga" element={<Bundesliga />} />
+        <Route path="/laliga" element={<Laliga />} />
+        <Route path="/ligue-1" element={<Ligue1 />} />
+        <Route path="/serie-a" element={<SerieA />} />
+      </Routes>
     </div>
   )
 }
