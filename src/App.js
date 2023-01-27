@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import PL from "./leagues/PL"
+import SerieA from "./leagues/SerieA"
+import Bundesliga from "./leagues/Bundesliga"
+import Laliga from "./leagues/Laliga"
+import Ligue1 from "./leagues/Ligue1"
 
 function App() {
+  function toPl() {
+    <PL />
+  }
+  function toSerieA() {
+    <SerieA />
+  }
+  function toBundesliga() {
+    <Bundesliga />
+  }
+  function toLaliga() {
+    <Laliga />
+  }
+  function toLigue1() {
+    <Ligue1 />
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Choose a league to view:</h3>
+      <div className="button-wrapper">
+        <button onClick={toPl}>Premier League</button>
+        <button onClick={toSerieA}>Serie A</button>
+        <button onClick={toBundesliga}>Bundesliga</button>
+        <button onClick={toLaliga}>La Liga</button>
+        <button onClick={toLigue1}>Ligue 1</button>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
